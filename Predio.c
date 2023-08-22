@@ -4,10 +4,10 @@
 #define ANDAR 16
 #define UNIDADE 8
 
-/*Esse programa serve para administrar diversas salas comerciais de um prédio*/
+/*Esse programa serve para administrar diversas salas comerciais de um predio*/
 
 
-//Transforma todos os números da matriz em zero
+//Transforma todos os numeros da matriz em zero
 void iniciar(int predio[ANDAR][UNIDADE]){
 	int lin,col;
 	
@@ -27,7 +27,7 @@ void consultarUnidade(int predio[ANDAR][UNIDADE],int col){
 	
 	printf("Andar\tUnidade %i\n",col);
 	
-	/*Note que esse decremento serve para inverter a matriz na exibição 
+	/*Note que esse decremento serve para inverter a matriz na exibicao 
 	fazendo com que os andares fiquem de acordo com o que o usuario escolheu*/
 	for(lin=ANDAR-1;lin>=0;lin--){
 		printf("%i\t %i\n",lin+1,predio[lin][col-1]);
@@ -40,7 +40,7 @@ void consultarTodasUnidades(int predio[ANDAR][UNIDADE]){
 	int lin,col,soma;
 	
 	printf("Unidade\tProfissionais\n");
-	//Nao e necessáario inverter aqui, pois os andares não são exibidos
+	//Nao e necessario inverter aqui, pois os andares nao sao exibidos
 	for(col=0;col<UNIDADE;col++){
 		for(lin=0;lin<ANDAR;lin++){
 			soma+=predio[lin][col];
@@ -99,7 +99,7 @@ void salasVazias(int predio[ANDAR][UNIDADE]){
 	}
 }
 
-//lintemp e coltemp são variáveis que armazenam os valores de lin e col temporáriamente
+//lintemp e coltemp sao variaveis que armazenam os valores de lin e col temporariamente
 void maiorNumero(int predio[ANDAR][UNIDADE]){
 	int lin, col,lintemp,coltemp,maior=0;
 	
@@ -124,14 +124,14 @@ main(){
 	do{
 		system("cls");
 		printf("Menu:\n");
-		printf("1) Inicializar o prédio\n");
-		printf("2) Alterar o número de profissionais de uma sala\n");
-		printf("3) Consultar o número de profissionais de uma unidade\n");
-		printf("4) Imprimir o número de profissionais de cada unidade\n");
-		printf("5) Imprimir o número de profissionais do prédio\n");
-		printf("6) Imprimir o número total de profissionais de cada andar\n");
-		printf("7) Informar quais salas estão vazias (ou seja, sem locação)\n");
-		printf("8) Identificar a unidade com o maior número de profissionais\n");
+		printf("1) Inicializar o predio\n");
+		printf("2) Alterar o numero de profissionais de uma sala\n");
+		printf("3) Consultar o numero de profissionais de uma unidade\n");
+		printf("4) Imprimir o numero de profissionais de cada unidade\n");
+		printf("5) Imprimir o numero de profissionais do predio\n");
+		printf("6) Imprimir o numero total de profissionais de cada andar\n");
+		printf("7) Informar quais salas estao vazias (ou seja, sem locacao)\n");
+		printf("8) Identificar a unidade com o maior numero de profissionais\n");
 		printf("9) Finalizar programa.\n");
 		printf("\nResposta: ");
 		scanf("%i",&menu);
@@ -150,7 +150,7 @@ main(){
 				printf("Unidade escolhida: ");
 				scanf("%i",&col);
 				printf("\n");
-				printf("Número para escrever: ");
+				printf("Numero para escrever: ");
 				scanf("%i",&num);
 				alterarSala(predio,lin,col,num);
 				printf("\nAlterado com sucesso!");				
