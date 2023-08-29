@@ -1,8 +1,7 @@
 #include <stdlib.h>
-#include <stdio.h>
-#include <locale.h>
 #define ANDAR 16
 #define UNIDADE 8
+
 
 /*Esse programa serve para administrar diversas salas comerciais de um predio*/
 
