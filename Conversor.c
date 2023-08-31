@@ -56,7 +56,6 @@ void decimalParaHexadecimal(int num, int temp){
 		printf("%i",temp);
 	return;
 }
-
 	printf("Divisao: %i/16\n",num);
 	printf("Resto: %i\n",resto);
 	printf("Resultado: %i\n\n",resultado);
@@ -147,12 +146,7 @@ main(){
 					}
 					system("cls");
 				}
-			break;
-				
+			break;		
 		}
-
 	}
-	printf("Converta um numero inteiro para sua forma binaria: ");
-	scanf("%i",&num);
-	decimalParaBinario(num);
 }

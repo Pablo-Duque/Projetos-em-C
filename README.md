@@ -2,9 +2,11 @@
 
  ## Programas desenvolvidos usando a linguagem C
 
-### Conversor🔄: Programa que converte um número em decimal para binário.
-* Funcionalidades:
-    ##### - Converter de decimal para binário.
+### Conversor🔄: Programa que converte número em diferentes bases numéricas.
+* Conversões disponíveis:
+    ##### - Decimal para binária.
+    ##### - Decimal para octal.
+    ##### - Decimal para hexadecimal.
 
 <br>  
 
