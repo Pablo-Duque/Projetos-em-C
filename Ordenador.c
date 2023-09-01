@@ -66,7 +66,6 @@ void escrever(int alpha[TAMANHO]){
 }
 
 int main(){
-	setlocale(LC_ALL,"Portuguese");
 	int i,x,alpha[TAMANHO];
 	
 	do{

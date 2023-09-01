@@ -117,7 +117,6 @@ void maiorNumero(int predio[ANDAR][UNIDADE]){
 }
 
 int main(){
-	setlocale(LC_ALL,"Portuguese");
 	int menu,predio[ANDAR][UNIDADE],lin,col,num;
 	
 	//Menu
