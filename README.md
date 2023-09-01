@@ -4,9 +4,12 @@
 
 ### Conversor🔄: Programa que converte número em diferentes bases numéricas.
 * Conversões disponíveis:
-    ##### - Decimal para binária.
+    ##### - Decimal para binário.
     ##### - Decimal para octal.
     ##### - Decimal para hexadecimal.
+    ##### - Binário para octal.
+    ##### - Binário para decimal.
+    ##### - Binário para hexadecimal.
 
 <br>  
 
