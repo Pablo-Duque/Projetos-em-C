@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #define ANDAR 16
 #define UNIDADE 8
@@ -115,7 +116,7 @@ void maiorNumero(int predio[ANDAR][UNIDADE]){
 	printf("%i\t%i",lintemp,maior);
 }
 
-main(){
+int main(){
 	setlocale(LC_ALL,"Portuguese");
 	int menu,predio[ANDAR][UNIDADE],lin,col,num;
 	
@@ -194,9 +195,9 @@ main(){
 				printf("\n\n");
 				system("pause");
 			break;
-}
-}while(menu!=9);
-
+		}
+	}while(menu!=9);
+	return 0;
 	
 }
 
