@@ -5,7 +5,7 @@
 
 void decimalParaBinario(int num){
 	int resto,resultado;
-
+	
 	resultado=num/2;	
 	resto=num%2;
 
@@ -123,7 +123,7 @@ int octalParaDecimal(char paraDecimal[]){
 		conv[0]=paraDecimal[i];
 		num[i]=atoi(conv);
 		
-		if(num[i]<0 || num[i]>7){
+		if(num[i]>7){
 			printf("Numero invalido!\n");
 			return soma;
 		}
@@ -132,6 +132,47 @@ int octalParaDecimal(char paraDecimal[]){
 	for(i=0;i<tamanho;i++){
 		resultado=num[tamanho-i-1]*pow(8,i);	
 		printf("%i * 8^%i = %i\n",num[tamanho-i-1],i,resultado);
+		soma+=resultado;
+	}
+	
+	printf("\n%i(10)\n\n",soma);
+	return soma;
+}
+
+int hexadecimalParaDecimal(char paraDecimal[]){
+	int num[20],tamanho,i,soma=0,resultado;
+	char conv[2];
+	
+	tamanho=strlen(paraDecimal);
+	
+	for(i=0;i<tamanho;i++){
+		if(paraDecimal[i]=='A'||paraDecimal[i]=='a'){
+			num[i]=10;
+		}
+		else if(paraDecimal[i]=='B'||paraDecimal[i]=='b'){
+			num[i]=11;
+		}
+		else if(paraDecimal[i]=='C'||paraDecimal[i]=='c'){
+			num[i]=12;
+		}
+		else if(paraDecimal[i]=='D'||paraDecimal[i]=='d'){
+			num[i]=13;
+		}
+		else if(paraDecimal[i]=='E'||paraDecimal[i]=='e'){
+			num[i]=14;
+		}
+		else if(paraDecimal[i]=='F'||paraDecimal[i]=='f'){
+			num[i]=15;
+		}
+		else{
+			conv[0]=paraDecimal[i];
+			num[i]=atoi(conv);
+		}	
+	}
+	
+	for(i=0;i<tamanho;i++){
+		resultado=num[tamanho-i-1]*pow(16,i);	
+		printf("%i * 16^%i = %i\n",num[tamanho-i-1],i,resultado);
 		soma+=resultado;
 	}
 	
@@ -310,8 +351,64 @@ int main(){
 					}
 					system("cls");
 				}while(menuPara!=4);
-			break;		
+			break;	
+			
+			case 4:
+				do{
+					printf("Converter de hexadecimal para: \n");
+					printf("1: Binario\n");
+					printf("2: Octal\n");
+					printf("3: Decimal\n");
+					printf("4: Voltar\n");
+					printf("Resposta: ");
+					scanf("%i",&menuPara);
+					
+					switch(menuPara){
+						case 1:
+							printf("\nNumero para converter: ");
+							scanf("%s",paraDecimal);
+							system("cls");
+							printf("Converter %s(16) para binario:\n\n",paraDecimal);
+							printf("Hexadecimal para decimal:\n\n");
+							ponte=hexadecimalParaDecimal(paraDecimal);
+							printf("--------------\n\n");
+							printf("Decimal para binario:\n\n");
+							decimalParaBinario(ponte);
+							printf("(2)\n\n");
+							system("pause");
+							system("cls");
+						break;
+						
+						case 2:
+							printf("\nNumero para converter: ");
+							scanf("%s",paraDecimal);
+							system("cls");
+							printf("Converter %s(16) para octal:\n\n",paraDecimal);
+							printf("Hexadecimal para decimal:\n\n");
+							ponte=hexadecimalParaDecimal(paraDecimal);
+							printf("--------------\n\n");
+							printf("Decimal para octal:\n\n");
+							decimalParaOctal(ponte,ponte);
+							printf("(8)\n\n");
+							system("pause");
+							system("cls");
+						break;
+						
+						case 3:
+							printf("\nNumero para converter: ");
+							scanf("%s",paraDecimal);
+							system("cls");
+							printf("Converter %s(16) para decimal:\n\n",paraDecimal);
+							hexadecimalParaDecimal(paraDecimal);
+							system("pause");
+							system("cls");
+						break;
+					}
+					system("cls");
+				}while(menuPara!=4);
+			break;	
 		}
+		
 	}while(menuDe!=5);
 	return 0;
 }
