@@ -6,6 +6,11 @@
 void decimalParaBinario(int num){
 	int resto,resultado;
 	
+	if(num<0){
+		printf("Numero invalido!");
+		return;
+	}
+	
 	resultado=num/2;	
 	resto=num%2;
 
@@ -29,6 +34,11 @@ void decimalParaBinario(int num){
 
 void decimalParaOctal(int num, int temp){
 	int resto,resultado;
+
+	if(num<0){
+		printf("Numero invalido!");
+		return;
+	}
 	
 	resultado=num/8;	
 	resto=num%8;
@@ -52,6 +62,11 @@ void decimalParaOctal(int num, int temp){
 
 void decimalParaHexadecimal(int num, int temp){
 	int resto,resultado;
+	
+	if(num<0){
+		printf("Numero invalido!");
+		return;
+	}
 	
 	resultado=num/16;	
 	resto=num%16;
@@ -98,7 +113,7 @@ int binarioParaDecimal(char paraDecimal[]){
 		num[i]=atoi(conv);
 		
 		if(num[i]!=0 && num[i]!=1){
-			printf("Numero invalido!\n");
+			printf("Numero invalido!(2)\n\n");
 			return soma;
 		}
 	}
@@ -124,7 +139,7 @@ int octalParaDecimal(char paraDecimal[]){
 		num[i]=atoi(conv);
 		
 		if(num[i]>7){
-			printf("Numero invalido!\n");
+			printf("Numero invalido!(8)\n\n");
 			return soma;
 		}
 	}
