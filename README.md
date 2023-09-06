@@ -2,7 +2,7 @@
 
  ## Programas desenvolvidos usando a linguagem C
 
-### Conversor🔄: Programa que converte número em diferentes bases numéricas.
+### Conversor🔄: Programa que converte números em diferentes bases numéricas.
 * Bases disponíveis:
     ##### - Binário;
     ##### - Octal;
@@ -19,7 +19,7 @@
 
 <br>  
 
-###  Predio🏢: Programa que simula um sistema de administração de um prédio com diversas salas comerciais.
+###  Predio🏢: Programa que simula um sistema administrativo de um prédio com diversas salas comerciais.
 * Funcionalidades:
     ##### - Alterar número de profissionais de uma sala;
     ##### - Consultar andares;
