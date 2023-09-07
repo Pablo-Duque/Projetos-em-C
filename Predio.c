@@ -7,115 +7,115 @@
 
 //Transforma todos os numeros da matriz em zero
 void iniciar(int predio[ANDAR][UNIDADE]){
-	int lin, col;
+	int andar, unid;
 	
-	for(lin = 0; lin < ANDAR; lin++){
-		for(col = 0; col < UNIDADE; col++){
-			predio[lin][col] = 0;
+	for(andar = 0; andar < ANDAR; andar++){
+		for(unid = 0; unid < UNIDADE; unid++){
+			predio[andar][unid] = 0;
 		}
 	}
 }
 
-void alterarSala(int predio[ANDAR][UNIDADE],int lin,int col,int num){
-	predio[lin-1][col-1] = num;
+void alterarSala(int predio[ANDAR][UNIDADE], int andar, int unid, int num){
+	predio[andar-1][unid-1] = num;
 }
 
-void consultarUnidade(int predio[ANDAR][UNIDADE],int col){
-	int lin;
+void consultarUnidade(int predio[ANDAR][UNIDADE], int unid){
+	int andar;
 	
-	printf("Andar\tUnidade %i\n", col);
+	printf("Andar\tUnidade %i\n", unid);
 
 	/*Note que esse decremento serve para inverter a matriz na exibicao 
 	fazendo com que os andares fiquem de acordo com o que o usuario escolheu*/
-	for(lin = ANDAR-1; lin >= 0; lin--){
-		printf("%i\t %i\n", lin+1, predio[lin][col-1]);
+	for(andar = ANDAR-1; andar >= 0; andar--){
+		printf("%i\t %i\n", andar+1, predio[andar][unid-1]);
 	}
 }
 
 //Diferente da anterior, essa consulta todas as unidades
 void consultarTodasUnidades(int predio[ANDAR][UNIDADE]){
-	int lin, col, soma;
+	int andar, unid, soma;
 	
 	printf("Unidade\tProfissionais\n");
 
 	//Nao e necessario inverter aqui, pois os andares nao sao exibidos
-	for(col = 0; col < UNIDADE; col++){
-		for(lin = 0; lin < ANDAR; lin++){
-			soma += predio[lin][col];
+	for(unid = 0; unid < UNIDADE; unid++){
+		for(andar = 0; andar < ANDAR; andar++){
+			soma += predio[andar][unid];
 		}
-			printf("%i\t\t%i\n", col+1, soma);
+			printf("%i\t\t%i\n", unid+1, soma);
 			soma = 0;
 	}	
 }
 
 void consultarPredio(int predio[ANDAR][UNIDADE]){
-	int lin, col;
+	int andar, unid;
 	
 	printf("Andar\t");
-	for(col = 0; col < UNIDADE; col++){
-		printf("Unid %i\t", col+1);
+	for(unid = 0; unid < UNIDADE; unid++){
+		printf("Unid %i\t", unid+1);
 	}
 	printf("\n");
 
-	//Linhas invertidas
-	for(lin = ANDAR-1; lin >= 0; lin--){
-		printf("%i\t", lin+1);
-		for(col = 0; col < UNIDADE; col++){
-			printf("%i\t", predio[lin][col]);
+	//andarhas invertidas
+	for(andar = ANDAR-1; andar >= 0; andar--){
+		printf("%i\t", andar+1);
+		for(unid = 0; unid < UNIDADE; unid++){
+			printf("%i\t", predio[andar][unid]);
 		}
 		printf("\n");
 	}
 }
 
 void consultarTodosAndares(int predio[ANDAR][UNIDADE]){
-	int lin, col, soma;
+	int andar, unid, soma;
 	
 	printf("Andar\t\tProfissionais\n");
 
-	for(lin = ANDAR-1; lin >= 0; lin--){
-		for(col = 0; col < UNIDADE; col++){
-			soma += predio[lin][col];
+	for(andar = ANDAR-1; andar >= 0; andar--){
+		for(unid = 0; unid < UNIDADE; unid++){
+			soma += predio[andar][unid];
 		}
-			printf("%i\t\t%i\n", lin+1, soma);
+			printf("%i\t\t%i\n", andar+1, soma);
 			soma = 0;
 	}	
 }
 
 void salasVazias(int predio[ANDAR][UNIDADE]){
-	int lin, col, lintemp, coltemp;
+	int andar, unid, andartemp, unidtemp;
 	
-	for(lin = 0; lin < ANDAR; lin++){
+	for(andar = 0; andar < ANDAR; andar++){
 		printf("Andar\tUnidade\n");
-		for(col = 0; col < UNIDADE; col++){
-			if(predio[lin][col] == 0){
-				lintemp = lin+1;
-				coltemp = col+1;
-				printf("%i\t%i\n", lintemp, coltemp);
+		for(unid = 0; unid < UNIDADE; unid++){
+			if(predio[andar][unid] == 0){
+				andartemp = andar+1;
+				unidtemp = unid+1;
+				printf("%i\t%i\n", andartemp, unidtemp);
 			}
 		}
 		printf("\n");
 	}
 }
 
-//lintemp e coltemp sao variaveis que armazenam os valores de lin e col temporariamente
+//andartemp e unidtemp sao variaveis que armazenam os valores de andar e unid temporariamente
 void maiorNumero(int predio[ANDAR][UNIDADE]){
-	int lin, col, lintemp, coltemp, maior = 0;
+	int andar, unid, andartemp, unidtemp, maior = 0;
 	
-	for(lin = 0; lin < ANDAR; lin++){
-		for(col = 0; col < UNIDADE; col++){
-			if(maior < predio[lin][col]){
-				maior = predio[lin][col];
-				lintemp = lin+1;
-				coltemp = col+1;
+	for(andar = 0; andar < ANDAR; andar++){
+		for(unid = 0; unid < UNIDADE; unid++){
+			if(maior < predio[andar][unid]){
+				maior = predio[andar][unid];
+				andartemp = andar+1;
+				unidtemp = unid+1;
 			}
 		}
 	}
-	printf("Andar\tUnidade %i\n", coltemp);
-	printf("%i\t%i", lintemp, maior);
+	printf("Andar\tUnidade %i\n", unidtemp);
+	printf("%i\t%i", andartemp, maior);
 }
 
 int main(){
-	int menu,predio[ANDAR][UNIDADE], lin, col, num;
+	int menu, predio[ANDAR][UNIDADE], andar, unid, num;
 
 	//Menu
 	do{
@@ -143,13 +143,13 @@ int main(){
 			
 			case 2:
 				printf("Andar escolhido: ");
-				scanf("%i", &lin);
+				scanf("%i", &andar);
 				printf("Unidade escolhida: ");
-				scanf("%i", &col);
+				scanf("%i", &unid);
 				printf("\n");
 				printf("Numero para escrever: ");
 				scanf("%i", &num);
-				alterarSala(predio, lin, col, num);
+				alterarSala(predio, andar, unid, num);
 				printf("\nAlterado com sucesso!");				
 				printf("\n\n");
 				system("pause");
@@ -157,9 +157,9 @@ int main(){
 		
 			case 3:
 				printf("Unidade a ser consultada: ");
-				scanf("%i", &col);
+				scanf("%i", &unid);
 				printf("\n");
-				consultarUnidade(predio, col);
+				consultarUnidade(predio, unid);
 				printf("\n");
 				system("pause");
 			break;
