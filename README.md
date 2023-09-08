@@ -2,7 +2,7 @@
 
  ## Programas desenvolvidos usando a linguagem C
 
-### Conversor🔄: Programa que converte números em diferentes bases numéricas.
+### Conversor🔄: Converte números em diferentes bases numéricas.
 * Bases disponíveis:
     ##### - Binário;
     ##### - Octal;
@@ -11,7 +11,17 @@
 
 <br>  
 
-### Ordenador🔢: Programa que ordena uma sequência de números, por padrão ele ordena 5 números.
+### Molde🧵: Simula um software de idealização de estampas em tecidos, tamanho máximo de 50x50.
+* Funcionalidades:
+    ##### - Ver molde;
+    ##### - Criar molde;
+    ##### - Alterar estampa;
+    ##### - Alternar estampas do molde;
+    ##### - Salvar em arquivo-texto.
+
+<br> 
+
+### Ordenador🔢: Ordena uma sequência de números, por padrão ele ordena 5 números.
 * Funcionalidades:
     ##### - Ordenar em ordem crescente;
     ##### - Ordenar em ordem decrescente;
@@ -19,7 +29,7 @@
 
 <br>  
 
-###  Predio🏢: Programa que simula um sistema administrativo de um prédio com diversas salas comerciais.
+###  Predio🏢: Simula um sistema administrativo de um prédio com diversas salas comerciais.
 * Funcionalidades:
     ##### - Alterar número de profissionais de uma sala;
     ##### - Consultar andares;
