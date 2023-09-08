@@ -218,21 +218,21 @@ int hexadecimalParaDecimal(char paraDecimal[]){
 }
 
 int main(){
-	int menuDe, menuPara, num, ponte;
+	int menu[2], num, ponte;
 	char paraDecimal[20];
 	
 	do{
-		printf("Converter de: \n");
+		printf("Converter de: \n\n");
 		printf("1: Binario\n");
 		printf("2: Octal\n");
 		printf("3: Decimal\n");
 		printf("4: Hexadecimal\n");
 		printf("5: Sair\n");
-		printf("Resposta: ");
-		scanf("%i", &menuDe);
+		printf("\nResposta: ");
+		scanf("%i", &menu[0]);
 		system("cls");
 		
-		switch(menuDe){
+		switch(menu[0]){
 			case 1:
 				do{
 					printf("Converter de binario para: \n");
@@ -240,10 +240,10 @@ int main(){
 					printf("2: Decimal\n");
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
-					printf("Resposta: ");
-					scanf("%i", &menuPara);
+					printf("\nResposta: ");
+					scanf("%i", &menu[1]);
 					
-					switch(menuPara){
+					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
 							scanf("%s", paraDecimal);
@@ -285,7 +285,7 @@ int main(){
 						break;
 					}
 					system("cls");
-				}while(menuPara != 4);
+				}while(menu[1] != 4);
 			break;
 			
 			case 2:
@@ -296,9 +296,9 @@ int main(){
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menuPara);
+					scanf("%i", &menu[1]);
 					
-					switch(menuPara){
+					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
 							scanf("%s", paraDecimal);
@@ -340,7 +340,7 @@ int main(){
 						break;
 					}
 					system("cls");
-				}while(menuPara != 4);
+				}while(menu[1] != 4);
 			break;
 			
 			case 3:
@@ -351,8 +351,8 @@ int main(){
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menuPara);
-					switch(menuPara){
+					scanf("%i", &menu[1]);
+					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
 							scanf("%i", &num);
@@ -387,7 +387,7 @@ int main(){
 						break;
 					}
 					system("cls");
-				}while(menuPara != 4);
+				}while(menu[1] != 4);
 			break;	
 			
 			case 4:
@@ -398,9 +398,9 @@ int main(){
 					printf("3: Decimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menuPara);
+					scanf("%i", &menu[1]);
 					
-					switch(menuPara){
+					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
 							scanf("%s", paraDecimal);
@@ -442,10 +442,10 @@ int main(){
 						break;
 					}
 					system("cls");
-				}while(menuPara != 4);
+				}while(menu[1] != 4);
 			break;	
 		}	
-	}while(menuDe != 5);
+	}while(menu[0] != 5);
 	
 	return 0;
 }

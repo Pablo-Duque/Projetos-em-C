@@ -7,11 +7,12 @@
 
 void crescente(int alpha[TAMANHO]){
 	int temp, i, j;
+	
 	for(i = 0; i < TAMANHO; i++){
 
 		//j=i para nao passar pelo mesmo lugar de novo
 		for(j = i; j < TAMANHO; j++){
-			if(alpha[i] < alpha[j]){
+			if(alpha[i] > alpha[j]){
 				//Troca sendo feita
 				temp = alpha[j];
 				alpha[j] = alpha[i];
@@ -23,9 +24,10 @@ void crescente(int alpha[TAMANHO]){
 
 void decrescente(int alpha[TAMANHO]){
 	int temp, i, j;
+	
 	for(i = 0; i < TAMANHO; i++){
 		for(j = i; j < TAMANHO; j++){
-			if(alpha[i] > alpha[j]){
+			if(alpha[i] < alpha[j]){
 				temp = alpha[j];
 				alpha[j] = alpha[i];
 				alpha[i] = temp;
@@ -36,14 +38,15 @@ void decrescente(int alpha[TAMANHO]){
 
 void especial(int alpha[TAMANHO]){
 	int maior = alpha[0], menor = alpha[0], i, meio, temp, placemaior, placemenor;
+	
 	for(i = 0; i < TAMANHO; i++){
 		
 		//Guarda tanto o maior, o menor, como os seus respectivos lugares
-		if(maior < alpha[i]){
+		if(maior <= alpha[i]){
 			maior = alpha[i];
 			placemaior = i;
 		}
-		if(menor > alpha[i]){
+		if(menor >= alpha[i]){
 			menor = alpha[i];
 			placemenor = i;
 		}
@@ -64,53 +67,63 @@ void especial(int alpha[TAMANHO]){
 
 void escrever(int alpha[TAMANHO]){
 	int i;
-		printf("\nNumeros na ordem desejada: \n\n");
-		for(i = 0; i < TAMANHO; i++){
-			printf("%i", alpha[i]);
-			printf("\n");
-		}
-		printf("\n");
-		system("pause");
+	
+	printf("\nNumeros na ordem desejada: \n\n");
+	for(i = 0; i < TAMANHO; i++){
+		printf("%i ", alpha[i]);
+	}
+	printf("\n\n");
+	system("pause");
 }
 
 int main(){
-	int i, x, alpha[TAMANHO];
+	int i, menu, alpha[TAMANHO];
 	
+	printf("Primeiro digite os numeros\n\n");
+	for(i = 0; i < TAMANHO; i++){
+		printf("Digite o valor de Alpha[%i]: ", i+1);
+		scanf("%i", &alpha[i]);	
+	}
+		
 	do{
-		printf("Primeiro digite os numeros\n\n");
-		for(i = 0; i < TAMANHO; i++){
-			printf("Digite o valor de Alpha[%i]: ", i+1);
-			scanf("%i", &alpha[i]);	
-		}
+		system("cls");
+
+		printf("Menu: \n\n");
+		printf("1: Alterar numeros\n");
+		printf("2: Ordenar em ordem crescente\n");
+		printf("3: Ordenar em ordem decrescente\n");
+		printf("4: Maior numero no meio e menor no final\n");
+		printf("5: Sair\n");
+		printf("\nResposta: ");
+		scanf("%i", &menu);
 		
-		printf("Menu\n");
-		printf("1: Ordenar em ordem crescente\n");
-		printf("2: Ordenar em ordem decrescente\n");
-		printf("3: Maior numero no meio e menor no final\n");
-		printf("4: Sair\n");
-		printf("Resposta: ");
-		scanf("%i", &x);
-		
-		switch(x){
-			case 1:{
+		switch(menu){
+			case 1:
+				printf("\n");
+				for(i = 0; i < TAMANHO; i++){
+				printf("Digite o valor de Alpha[%i]: ", i+1);
+				scanf("%i", &alpha[i]);	
+				}
+			break;
+			
+			case 2:
 				crescente(alpha);
 				escrever(alpha);
-				break;
-			}
-			case 2:{
+			break;
+			
+			case 3:
 				decrescente(alpha);
 				escrever(alpha);
-				break;
-			}
-			case 3:{
+			break;
+			
+			case 4:
 				especial(alpha);
 				escrever(alpha);
-				break;
-			}
+			break;
 		}
 		
 		system("cls");
-		}while(x != 4);
+		}while(menu != 5);
 	
 	return 0;
 }

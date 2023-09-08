@@ -120,7 +120,7 @@ int main(){
 	//Menu
 	do{
 		system("cls");
-		printf("Menu:\n");
+		printf("Menu: \n\n");
 		printf("1) Inicializar o predio\n");
 		printf("2) Alterar o numero de profissionais de uma sala\n");
 		printf("3) Consultar o numero de profissionais de uma unidade\n");
