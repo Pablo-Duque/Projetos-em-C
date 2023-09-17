@@ -11,7 +11,11 @@
 
 <br>  
 
-### Jogo da Memória 🧠: Memorize os números antes que o tempo acabe e depois escolha os pares.
+### Jogo da Memória 🧠: Memorize os números antes que o tempo acabe e depois escolha os pares para vencer.
+* Dificuldades e seus tempos de memorização:
+    ##### - Fácil   (20 Seg);
+    ##### - Médio   (15 Seg);
+    ##### - Difícil (10 Seg).
 
 <br> 
 
@@ -29,7 +33,7 @@
 * Funcionalidades:
     ##### - Ordenar em ordem crescente;
     ##### - Ordenar em ordem decrescente;
-    ##### - Ordenar de forma que o maior número fique no meio e o menor por último.
+    ##### - Ordenar de forma que o maior número fique no meio e o menor no final.
 
 <br>  
 
