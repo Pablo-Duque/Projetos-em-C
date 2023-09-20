@@ -37,6 +37,12 @@
 
 <br>  
 
+###  Pilha 🔋: Uma pilha básica, último a entrar primeiro a sair. Apenas números inteiros.
+* Possibilidades:
+    ##### - Ver o que está escrito na pilha;
+    ##### - Escrever na pilha;
+    ##### - Retirar da pilha.
+
 ###  Predio 🏢: Simula um sistema administrativo de um prédio com diversas salas comerciais.
 * Funcionalidades:
     ##### - Alterar número de profissionais de uma sala;
