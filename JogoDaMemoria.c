@@ -10,9 +10,12 @@ struct jogoMemoria{
 //Funcao abaixo do main devido ao seu tamanho
 struct jogoMemoria gerarJogo(struct jogoMemoria tabela, int jogo);
 
+
+//Mostra os numeros ao jogador
 void exibirFrente(struct jogoMemoria tabela, int tempo){
 	int i, linha, coluna;
 	
+	//For para contar os segundos que a tabela ficara exposta
 	for(i = 0; i < tempo; i++){
 		printf("   Voce tem %i segundos para memorizar!\n\n", tempo-i);
 		for(linha = 0; linha < 4; linha++){
@@ -27,6 +30,7 @@ void exibirFrente(struct jogoMemoria tabela, int tempo){
 	}
 }
 
+//Mostra '#' no lugar dos numeros
 void exibirVerso(struct jogoMemoria tabela){
 	int i, linha, coluna;
 	
@@ -50,6 +54,7 @@ struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 		printf("\t Coluna: ");
 		scanf("%i", &coluna1);
 		
+		//Medida para nao ocorrer erro
 		if (linha1 < 1 || linha1 > 4 || coluna1 < 1 || coluna1 > 4){
 			printf("\n\n   Apenas numeros de 1 a 4 sao permitidos!\n\n");
 			printf("   ");
@@ -74,7 +79,8 @@ struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 			escolherPar(tabela);
 		}
 		
-		if(linha1 == linha2 && coluna1 == coluna2){
+		//Se o jogador tentar marcar par com o proprio numero
+		else if(linha1 == linha2 && coluna1 == coluna2){
 			printf("\n\n   Voce nao pode escolher a mesma posicao!\n\n");
 			printf("   ");
 			system("pause");
@@ -83,6 +89,7 @@ struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 			escolherPar(tabela);
 		}
 		
+		//Se o jogador tentar marcar par com um numero ja descoberto
 		else if(tabela.verso[linha1-1][coluna1-1] != '#' || tabela.verso[linha2-1][coluna2-1] != '#'){
 			printf("\n\n   Essa posicao ja foi escolhida!\n\n");
 			printf("   ");
@@ -92,30 +99,35 @@ struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 			escolherPar(tabela);
 		}
 		
-		tabela.verso[linha1-1][coluna1-1] = tabela.frente[linha1-1][coluna1-1];
-		tabela.verso[linha2-1][coluna2-1] = tabela.frente[linha2-1][coluna2-1];
-		
-		system("cls");
-		exibirVerso(tabela);
-		
-		if(tabela.frente[linha1-1][coluna1-1] == tabela.frente[linha2-1][coluna2-1]){
-			printf("\n\t   Voce acertou!\n\n");
-			printf("   ");
-			system("pause");
-		}
-		
+		/*Se nao ocorrer nenhum erro ele faz a substituicao do caractere '#'
+		pelo numero que "esta atras", para fornecer feedback*/
 		else{
-			printf("\n\t    Voce errou!\n\n");
-			printf("   ");
-			system("pause");
-			tabela.verso[linha1-1][coluna1-1] = '#';
-			tabela.verso[linha2-1][coluna2-1] = '#';
+			tabela.verso[linha1-1][coluna1-1] = tabela.frente[linha1-1][coluna1-1];
+			tabela.verso[linha2-1][coluna2-1] = tabela.frente[linha2-1][coluna2-1];
+			
+			system("cls");
+			exibirVerso(tabela);
+			
+			if(tabela.frente[linha1-1][coluna1-1] == tabela.frente[linha2-1][coluna2-1]){
+				printf("\n\t   Voce acertou!\n\n");
+				printf("   ");
+				system("pause");
+			}
+			
+			else{
+				printf("\n\t    Voce errou!\n\n");
+				printf("   ");
+				system("pause");
+				tabela.verso[linha1-1][coluna1-1] = '#';
+				tabela.verso[linha2-1][coluna2-1] = '#';
+			}
+			system("cls");
+			
+			return tabela;
 		}
-	system("cls");
-	
-	return tabela;
 }
 
+//Verifica se o jogador terminou ou nao o jogo
 bool fimJogo(struct jogoMemoria tabela){
 		int linha, coluna;
 		
@@ -136,7 +148,8 @@ int main(){
 	struct jogoMemoria tabela;
 	
 	srand(time(NULL));
-		
+	
+	//Escolhe qual jogo sera escolhido
 	tabela = gerarJogo(tabela, rand()%20);
 
 	printf("   Selecione a dificuldade antes de jogar (qualquer outro valor o tempo sera de 15 Seg):\n");
@@ -181,6 +194,7 @@ struct jogoMemoria gerarJogo(struct jogoMemoria tabela, int jogo){
 		}
 	}
 	
+	//O numero sorteado pelo rand escolhera a matriz
 	switch(jogo){
 		case 0:
 		    tabela.frente[0][0] = '5'; tabela.frente[0][1] = '3'; tabela.frente[0][2] = '3'; tabela.frente[0][3] = '8';

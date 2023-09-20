@@ -7,6 +7,8 @@ void criarMolde (char molde [50][50], int comprimento, int largura, char estampa
 
     for(lin = 0; lin < largura; lin++){
         for(col = 0; col < comprimento; col++){
+        	
+        	//Se a linha ou coluna forem par o molde e preenchido
             if(lin%2 == 0 || col%2 == 0){
                 molde[lin][col] = estampa;
             }
@@ -23,6 +25,8 @@ void alternarMolde (char molde [50][50], int comprimento, int largura, char esta
 
     for(lin = 0; lin < largura; lin++){
         for(col = 0; col < comprimento; col++){
+        	
+			//Recebe a nova estampa
             if(molde[lin][col] == estampa){
                 molde[lin][col] = ' ';
             }
