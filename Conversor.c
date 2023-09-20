@@ -185,18 +185,23 @@ int hexadecimalParaDecimal(char paraDecimal[]){
 		if(paraDecimal[i] == 'A' || paraDecimal[i] == 'a'){
 			num[i] = 10;
 		}
+		
 		else if(paraDecimal[i] == 'B' || paraDecimal[i] == 'b'){
 			num[i] = 11;
 		}
+
 		else if(paraDecimal[i] == 'C' || paraDecimal[i] == 'c'){
 			num[i] = 12;
 		}
+
 		else if(paraDecimal[i] == 'D' || paraDecimal[i] == 'd'){
 			num[i] = 13;
 		}
+
 		else if(paraDecimal[i] == 'E' || paraDecimal[i] == 'e'){
 			num[i] = 14;
 		}
+
 		else if(paraDecimal[i] == 'F' || paraDecimal[i] == 'f'){
 			num[i] = 15;
 		}
@@ -219,7 +224,7 @@ int hexadecimalParaDecimal(char paraDecimal[]){
 
 int main(){
 	int menu[2], num, ponte;
-	char paraDecimal[20];
+	char input[50], paraDecimal[20];
 	
 	do{
 		printf("Converter de: \n\n");
@@ -229,7 +234,8 @@ int main(){
 		printf("4: Hexadecimal\n");
 		printf("5: Sair\n");
 		printf("\nResposta: ");
-		scanf("%i", &menu[0]);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &menu[0]);
 		system("cls");
 		
 		switch(menu[0]){
@@ -241,12 +247,13 @@ int main(){
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
 					printf("\nResposta: ");
-					scanf("%i", &menu[1]);
+					fgets(input, 50, stdin);
+					sscanf(input, "%i", &menu[1]);
 					
 					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(2) para octal:\n\n", paraDecimal);
 							printf("Binario para decimal:\n\n");
@@ -261,7 +268,7 @@ int main(){
 						
 						case 2:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(2) para decimal:\n\n", paraDecimal);
 							binarioParaDecimal(paraDecimal);
@@ -271,7 +278,7 @@ int main(){
 						
 						case 3:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(2) para hexadecimal:\n\n", paraDecimal);
 							printf("Binario para decimal:\n\n");
@@ -296,12 +303,13 @@ int main(){
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menu[1]);
+					fgets(input, 50, stdin);
+					sscanf(input, "%i", &menu[1]);
 					
 					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(8) para binario:\n\n", paraDecimal);
 							printf("Octal para decimal:\n\n");
@@ -316,7 +324,7 @@ int main(){
 						
 						case 2:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(8) para decimal:\n\n", paraDecimal);
 							octalParaDecimal(paraDecimal);
@@ -326,7 +334,7 @@ int main(){
 						
 						case 3:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(8) para hexadecimal:\n\n", paraDecimal);
 							printf("Octal para decimal:\n\n");
@@ -351,11 +359,13 @@ int main(){
 					printf("3: Hexadecimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menu[1]);
+					fgets(input, 50, stdin);
+					sscanf(input, "%i", &menu[1]);
 					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
-							scanf("%i", &num);
+							fgets(input, 50, stdin);
+							sscanf(input, "%i", &num);
 							system("cls");
 							printf("Converter %i(10) para binario:\n\n", num);
 							decimalParaBinario(num);
@@ -366,7 +376,8 @@ int main(){
 						
 						case 2:
 							printf("\nNumero para converter: ");
-							scanf("%i", &num);
+							fgets(input, 50, stdin);
+							sscanf(input, "%i", &num);
 							system("cls");
 							printf("Converter %i(10) para octal:\n\n", num);
 							decimalParaOctal(num, num);
@@ -377,7 +388,8 @@ int main(){
 						
 						case 3:
 							printf("\nNumero para converter: ");
-							scanf("%i", &num);
+							fgets(input, 50, stdin);
+							sscanf(input, "%i", &num);
 							system("cls");
 							printf("Converter %i(10) para hexadecimal:\n\n", num);
 							decimalParaHexadecimal(num, num);
@@ -398,12 +410,13 @@ int main(){
 					printf("3: Decimal\n");
 					printf("4: Voltar\n");
 					printf("Resposta: ");
-					scanf("%i", &menu[1]);
+					fgets(input, 50, stdin);
+					sscanf(input, "%i", &menu[1]);
 					
 					switch(menu[1]){
 						case 1:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(16) para binario:\n\n", paraDecimal);
 							printf("Hexadecimal para decimal:\n\n");
@@ -418,7 +431,7 @@ int main(){
 						
 						case 2:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(16) para octal:\n\n", paraDecimal);
 							printf("Hexadecimal para decimal:\n\n");
@@ -433,7 +446,7 @@ int main(){
 						
 						case 3:
 							printf("\nNumero para converter: ");
-							scanf("%s", paraDecimal);
+							fgets(paraDecimal, 50, stdin);
 							system("cls");
 							printf("Converter %s(16) para decimal:\n\n", paraDecimal);
 							hexadecimalParaDecimal( paraDecimal);

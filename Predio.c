@@ -116,6 +116,7 @@ void maiorNumero(int predio[ANDAR][UNIDADE]){
 
 int main(){
 	int menu, predio[ANDAR][UNIDADE], andar, unid, num;
+	char input[50];
 
 	//Menu
 	do{
@@ -131,7 +132,8 @@ int main(){
 		printf("8) Identificar a unidade com o maior numero de profissionais\n");
 		printf("9) Finalizar programa.\n");
 		printf("\nResposta: ");
-		scanf("%i", &menu);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &menu);
 		printf("\n");
 		
 		//Itens do menu sendo executados
@@ -143,12 +145,15 @@ int main(){
 			
 			case 2:
 				printf("Andar escolhido: ");
-				scanf("%i", &andar);
+				fgets(input, 50, stdin);
+				sscanf(input, "%i", &andar);
 				printf("Unidade escolhida: ");
-				scanf("%i", &unid);
+				fgets(input, 50, stdin);
+				sscanf(input, "%i", &unid);
 				printf("\n");
 				printf("Numero para escrever: ");
-				scanf("%i", &num);
+				fgets(input, 50, stdin);
+				sscanf(input, "%i", &num);
 				alterarSala(predio, andar, unid, num);
 				printf("\nAlterado com sucesso!");				
 				printf("\n\n");
@@ -157,7 +162,8 @@ int main(){
 		
 			case 3:
 				printf("Unidade a ser consultada: ");
-				scanf("%i", &unid);
+				fgets(input, 50, stdin);
+				sscanf(input, "%i", &unid);
 				printf("\n");
 				consultarUnidade(predio, unid);
 				printf("\n");

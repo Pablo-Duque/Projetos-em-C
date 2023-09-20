@@ -47,12 +47,15 @@ void exibirVerso(struct jogoMemoria tabela){
 
 struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 	int linha1, linha2, coluna1, coluna2;
+	char input[50];
 		
 		printf("\n\t Escolha o primeiro lugar:\n\n");
 		printf("\t Linha: ");
-		scanf("%i", &linha1);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &linha1);
 		printf("\t Coluna: ");
-		scanf("%i", &coluna1);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &coluna1);
 		
 		//Medida para nao ocorrer erro
 		if (linha1 < 1 || linha1 > 4 || coluna1 < 1 || coluna1 > 4){
@@ -66,9 +69,11 @@ struct jogoMemoria escolherPar(struct jogoMemoria tabela){
 		
 		printf("\n\t Escolha o segundo lugar:\n\n");
 		printf("\t Linha: ");
-		scanf("%i", &linha2);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &linha2);
 		printf("\t Coluna: ");
-		scanf("%i", &coluna2);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &coluna2);
 		
 		if (linha2 < 1 || linha2 > 4 || coluna2 < 1 || coluna2 > 4){
 			printf("\n\n   Apenas numeros de 1 a 4 sao permitidos!\n\n");
@@ -144,6 +149,7 @@ bool fimJogo(struct jogoMemoria tabela){
 
 int main(){
 	int dificuldade;
+	char input[50];
 	
 	struct jogoMemoria tabela;
 	
@@ -158,7 +164,8 @@ int main(){
 	printf("\n   3: Dificil (10 Seg)\n");
 	printf("\n   Resposta: ");
 	
-	scanf("%i", &dificuldade);
+	fgets(input, 50, stdin);
+	sscanf(input, "%i", &dificuldade);
 	
 	system("cls");
 	

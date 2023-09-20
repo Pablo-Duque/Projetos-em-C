@@ -78,11 +78,13 @@ void escrever(int alpha[TAMANHO]){
 
 int main(){
 	int i, menu, alpha[TAMANHO];
+	char input[50];
 	
 	printf("Primeiro digite os numeros\n\n");
 	for(i = 0; i < TAMANHO; i++){
 		printf("Digite o valor de Alpha[%i]: ", i+1);
-		scanf("%i", &alpha[i]);	
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &alpha[i]);	
 	}
 		
 	do{
@@ -95,14 +97,16 @@ int main(){
 		printf("4: Maior numero no meio e menor no final\n");
 		printf("5: Sair\n");
 		printf("\nResposta: ");
-		scanf("%i", &menu);
+		fgets(input, 50, stdin);
+		sscanf(input, "%i", &menu);
 		
 		switch(menu){
 			case 1:
 				printf("\n");
 				for(i = 0; i < TAMANHO; i++){
 				printf("Digite o valor de Alpha[%i]: ", i+1);
-				scanf("%i", &alpha[i]);	
+				fgets(input, 50, stdin);
+				sscanf(input, "%i", &alpha[i]);	
 				}
 			break;
 			

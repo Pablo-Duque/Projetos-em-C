@@ -53,7 +53,7 @@ void mostrarMolde (char molde[50][50], int comprimento, int largura){
 
 int main(){
     int menu[2], largura, comprimento, lin, col;
-    char molde[50][50], estampa[2], moldesalvo[255];
+    char input[50], molde[50][50], estampa[2], moldesalvo[255];
     bool criou, alternou;
 
     FILE *txtmolde;
@@ -66,7 +66,8 @@ int main(){
         printf("2: Opcoes do molde\n");
         printf("3: Sair\n");
         printf("\nResposta: ");
-        scanf("%i", &menu[0]);
+        fgets(input, 50, stdin);
+        sscanf(input, "%i", &menu[0]);
         
         switch(menu[0]){
             case 1:
@@ -77,7 +78,8 @@ int main(){
                     printf("2: Ver moldes salvos\n");
                     printf("3: Voltar\n");
                     printf("\nResposta: ");
-                    scanf("%i", &menu[1]); 
+                    fgets(input, 50, stdin);
+                    sscanf(input, "%i", &menu[1]); 
                     
                         switch(menu[1]){
                             case 1:
@@ -128,16 +130,19 @@ int main(){
                     printf("4: Alternar molde\n");
                     printf("5: Voltar\n");
                     printf("\nResposta: ");
-                    scanf("%i", &menu[1]); 
+                    fgets(input, 50, stdin);
+                    sscanf(input,"%i", &menu[1]); 
 
                     switch(menu[1]){
                             case 1:
                                 printf("\nComprimento do molde: ");
-                                scanf("%i", &comprimento);
+                                fgets(input, 50, stdin);
+                                sscanf(input,"%i", &comprimento);
                                 printf("Largura do molde: ");
-                                scanf("%i", &largura);
+                                fgets(input, 50, stdin);
+                                sscanf(input,"%i", &largura);
                                 printf("Estampa do molde: ");
-                                scanf("%s", estampa);
+                                fgets(input, "%s", estampa);
 
                                 criarMolde(molde, comprimento, largura, estampa[0]);
                                 criou = true;
@@ -176,7 +181,7 @@ int main(){
                             case 3:
                             if(criou == true){
                                 printf("\nEstampa nova: ");
-                                scanf("%s", estampa);
+                                fgets(input, "%s", estampa);
 
                                 if(alternou == true){
                                     criarMolde(molde, comprimento, largura, estampa[0]);
