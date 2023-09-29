@@ -11,6 +11,15 @@
 
 <br>  
 
+### Estante de Livros 📚: Adicione alguns livros na estante, você poderá armazenar o nome, ISBN e o preço. Os livros estão separados por prateleiras de até 10 livros cada.
+
+* Possibilidades:
+    ##### - Adicionar livros;
+    ##### - Remover livros;
+    ##### - Consultar livros na estante. 
+
+<br>  
+
 ### Jogo da Memória 🧠: Memorize os números antes que o tempo acabe e depois escolha os pares para vencer.
 * Dificuldades e seus tempos de memorização:
     ##### - Fácil   (20 Seg);
