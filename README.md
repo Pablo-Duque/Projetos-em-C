@@ -60,3 +60,9 @@
     ##### - Consultar o prédio;
     ##### - Informar salas vazias;
     ##### - Informar sala com maior número de profissionais.
+
+###  Roupa 👔: Empilhe roupas utilizando memória dinâmica.
+* Funcionalidades:
+    ##### - Ver o que está escrito na pilha;
+    ##### - Escrever na pilha;
+    ##### - Retirar da pilha.
